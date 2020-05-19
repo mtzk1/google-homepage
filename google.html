@@ -2,8 +2,79 @@
 <html>
 	<head>
 		<title> Google </title>
+		<style>
+			.container {
+				display: grid;
+				background: white;
+				font-family: sans-serif;
+				height: 98vh;
+				grid-template-rows: 10px 40px 1fr 40px 48px;
+				grid-template-areas:
+				"filler filler filler"
+				"header header header"
+				"content content content"
+				"footer footer footer"
+				"footer2 footer2 footer2";
+			}
+			.header {
+				background: rgb(255,255,255);
+				grid-area: header;
+				font-size: 13px;
+				justify-self: end;
+				align-items: center;
+				display: grid;
+				grid-column-gap: 12px;
+				grid-template-areas: 
+				"gmail images apps profile blank";
+			}
+			.content {
+				background: rgb(255, 255, 255);
+				grid-area: content;
+				justify-self: center;
+				align-items: center;
+				display: grid;
+				grid-template-areas:
+				"blank center blank";
+			}
+			.footer {
+				background: rgb(50, 50, 50);
+				grid-area: footer;
+				color: rgb(255,255,255);
+			}
+			.footer2 {
+				background: rgb(0,0,0);
+				grid-area: footer2;
+				color: rgb(255,255,255);
+			}
+			a {
+				color: rgb(30, 30, 30);
+				text-decoration: none;
+			}
+			a:hover {
+				color: rgb(45,45,45);
+				text-decoration: underline;
+			}
+		</style>
 	</head>
 	<body>
-
+		<div class="container">
+			<div class="header">
+				<div class="gmail"><a href="">Gmail</a></div>
+				<div class="images"><a href="">Images</a></div>
+				<div class="apps">
+					<a href=""><img src="apps.png" alt="Google Apps" height="24px" width="24px"></a>
+				</div>
+				<div class="profile">
+					<a href=""><img src="profile.png" alt="Profile" height="40px" width="40px"></a>
+				</div>
+			</div>
+			<div class="content">
+				<div class="center">
+					<a href=""><img src="google-logo.jpg" alt="Google" height="200px" width="auto"></a>
+				</div>
+			</div>
+			<div class="footer">Footer</div>
+			<div class="footer2">Footer 2</div>
+		</div>
 	</body>
 </html>
