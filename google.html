@@ -8,7 +8,7 @@
 				background: white;
 				font-family: sans-serif;
 				height: 98vh;
-				grid-template-rows: 2px 40px 1fr 40px 48px;
+				grid-template-rows: 2px 40px 1fr 30px 38px;
 				grid-template-areas:
 				"filler filler filler"
 				"header header header"
@@ -30,34 +30,69 @@
 			.content {
 				background: rgb(255, 255, 255);
 				grid-area: content;
-				justify-self: center;
-				align-items: start;
-				display: grid;
-				grid-template-areas:
-				"google"
-				"search";
+				justify-content: flex-start;
+				align-items: center;
+				display: flex;
+				flex-direction: column;
 			}
 			.google {
-				padding-top: 9vh;
-				padding-bottom: none;
+				padding: 16vh 0px 25px 0px;
+				justify-content: center;
 			}
 			.search {
-				padding-top: none;
-				height: 30px;
-				width: 500px;
+				align-items: start;
+				height: 40px;
+				width: 540px;
 				border-radius: 25px;
-				border: 1px solid grey;
-				
+				border: 1px solid rgb(210, 210, 210);
+				padding: 4px 0px 0px 20px;
+			}
+			.search:hover {
+				box-shadow: 0px 0px 5px 1px lightgrey;
+			}
+			.buttons {
+				padding: 3vh 0px 2vh 0px;
+				display: flex;
+				flex-direction: row;
+				column-gap: 10px;
 			}
 			.footer {
-				background: rgb(50, 50, 50);
+				background: rgb(230, 230, 230);
+				border-top: 1px solid rgb(200,200,200);
 				grid-area: footer;
-				color: rgb(255,255,255);
+				color: rgb(150,150,150);
+			}
+			.country {
+				margin: 4px 0px 0px 15px;
+				font-size: 14px;
+				color: rgb(100,100,100);	
 			}
 			.footer2 {
-				background: rgb(0,0,0);
+				background: rgb(230, 230, 230);
+				border-top: 0.5px solid rgb(200,200,200);
 				grid-area: footer2;
 				color: rgb(255,255,255);
+				display: grid;
+				grid-template-areas: 
+				"left right";
+			}
+			.left {
+				grid-area: left;
+				justify-self: start;
+				align-items: center;
+				display: grid;
+				grid-column-gap: 12px;
+				grid-template-areas: 
+				"ad biz about how";
+			}
+			.right {
+				grid-area: right;
+				justify-self: end;
+				align-items: center;
+				display: grid;
+				grid-column-gap: 12px;
+				grid-template-areas: 
+				"priv terms settings";
 			}
 			a {
 				color: rgb(30, 30, 30);
@@ -67,8 +102,40 @@
 				color: rgb(45,45,45);
 				text-decoration: underline;
 			}
-			input {
+			#search {
 				border: none;
+				height: 35px;
+				width: 480px;
+				font-size: 15px;
+			}
+			#gsearch {
+				width: 130px;
+				height: 35px;
+				color:rgb(100,100,100);
+				background-color: rgb(240,240,240);
+				border: none;
+				border-radius: 3px;
+				font-size: 13px;
+			}
+			#gsearch:hover, #lucky:hover {
+				box-shadow: 0px 0px 1px 1px rgb(140,140,140);
+				color: rgb(0,0,0);
+			}
+			#lucky {
+				width: 140px;
+				height: 35px;
+				color:rgb(100,100,100);
+				background-color: rgb(240,240,240);
+				border: none;
+				border-radius: 3px;
+				font-size: 13px;
+			}
+			#languages {
+				font-size: 12px;
+			}
+			#lanlink {
+				color: rgb(0, 0, 150);
+				padding: 0px 2px 0px 2px;
 			}
 		</style>
 	</head>
@@ -86,14 +153,38 @@
 			</div>
 			<div class="content">
 				<div class="google">
-					<a href=""><img src="google-logo.jpg" alt="Google" height="220px" width="auto"></a>
+					<a href=""><img src="google-logo.jpg" alt="Google" height="105px" width="auto"></a>
 				</div>
 				<div class="search">
-					<input type="text">
+					<img src="search.png" alt="" height="20px" width="auto">
+					<input type="text" id="search">
+				</div>
+				<div class="buttons">
+						<button type="button" id="gsearch"> Google Search </button>
+						<button type="button" id="lucky"> I'm Feeling Lucky </button>
+				</div>
+				<div>
+					<p id="languages">Google offered in: <a href="" id="lanlink">中文(简体)</a> <a href="" id="lanlink">Melayu</a> <a href="" id="lanlink">தமிழ்</a></p>
 				</div>
 			</div>
-			<div class="footer">Footer</div>
-			<div class="footer2">Footer 2</div>
+			<div class="footer">
+				<div class="country">
+					Singapore
+				</div>
+			</div>
+			<div class="footer2">
+				<div class="left">
+					<div class="ad"><a href="">Advertising</a></div>
+					<div class="biz"><a href="">Business</a></div>
+					<div class="about"><a href="">About</a></div>
+					<div class="how"><a href="">How Search works</a></div>
+				</div>
+				<div class="right">
+					<div class="priv"><a href="">Privacy</a></div>
+					<div class="terms"><a href="">Terms</a></div>
+					<div class="settings"><a href="">Settings</a></div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
