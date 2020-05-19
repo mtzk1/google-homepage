@@ -8,7 +8,7 @@
 				background: white;
 				font-family: sans-serif;
 				height: 98vh;
-				grid-template-rows: 10px 40px 1fr 40px 48px;
+				grid-template-rows: 2px 40px 1fr 40px 48px;
 				grid-template-areas:
 				"filler filler filler"
 				"header header header"
@@ -31,10 +31,23 @@
 				background: rgb(255, 255, 255);
 				grid-area: content;
 				justify-self: center;
-				align-items: center;
+				align-items: start;
 				display: grid;
 				grid-template-areas:
-				"blank center blank";
+				"google"
+				"search";
+			}
+			.google {
+				padding-top: 9vh;
+				padding-bottom: none;
+			}
+			.search {
+				padding-top: none;
+				height: 30px;
+				width: 500px;
+				border-radius: 25px;
+				border: 1px solid grey;
+				
 			}
 			.footer {
 				background: rgb(50, 50, 50);
@@ -54,6 +67,9 @@
 				color: rgb(45,45,45);
 				text-decoration: underline;
 			}
+			input {
+				border: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -69,8 +85,11 @@
 				</div>
 			</div>
 			<div class="content">
-				<div class="center">
-					<a href=""><img src="google-logo.jpg" alt="Google" height="200px" width="auto"></a>
+				<div class="google">
+					<a href=""><img src="google-logo.jpg" alt="Google" height="220px" width="auto"></a>
+				</div>
+				<div class="search">
+					<input type="text">
 				</div>
 			</div>
 			<div class="footer">Footer</div>
