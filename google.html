@@ -27,6 +27,7 @@
 				grid-template-areas: 
 				"gmail images apps profile blank";
 			}
+/* --------------------------------------------------- */		
 			.content {
 				background: rgb(255, 255, 255);
 				grid-area: content;
@@ -50,66 +51,29 @@
 			.search:hover {
 				box-shadow: 0px 0px 5px 1px lightgrey;
 			}
-			.buttons {
-				padding: 3vh 0px 2vh 0px;
-				display: flex;
-				flex-direction: row;
-				column-gap: 10px;
-			}
-			.footer {
-				background: rgb(230, 230, 230);
-				border-top: 1px solid rgb(200,200,200);
-				grid-area: footer;
-				color: rgb(150,150,150);
-			}
-			.country {
-				margin: 4px 0px 0px 15px;
-				font-size: 14px;
-				color: rgb(100,100,100);	
-			}
-			.footer2 {
-				background: rgb(230, 230, 230);
-				border-top: 0.5px solid rgb(200,200,200);
-				grid-area: footer2;
-				color: rgb(255,255,255);
-				display: grid;
-				grid-template-areas: 
-				"left right";
-			}
-			.left {
-				grid-area: left;
-				justify-self: start;
-				align-items: center;
-				display: grid;
-				grid-column-gap: 12px;
-				grid-template-areas: 
-				"ad biz about how";
-			}
-			.right {
-				grid-area: right;
-				justify-self: end;
-				align-items: center;
-				display: grid;
-				grid-column-gap: 12px;
-				grid-template-areas: 
-				"priv terms settings";
-			}
-			a {
-				color: rgb(30, 30, 30);
-				text-decoration: none;
-			}
-			a:hover {
-				color: rgb(45,45,45);
-				text-decoration: underline;
-			}
 			#search {
 				border: none;
 				height: 35px;
 				width: 480px;
 				font-size: 15px;
 			}
+			.buttons {
+				padding: 3vh 0px 2vh 0px;
+				display: flex;
+				flex-direction: row;
+				column-gap: 10px;
+			}
 			#gsearch {
 				width: 130px;
+				height: 35px;
+				color:rgb(100,100,100);
+				background-color: rgb(240,240,240);
+				border: none;
+				border-radius: 3px;
+				font-size: 13px;
+			}
+			#lucky {
+				width: 140px;
 				height: 35px;
 				color:rgb(100,100,100);
 				background-color: rgb(240,240,240);
@@ -121,21 +85,67 @@
 				box-shadow: 0px 0px 1px 1px rgb(140,140,140);
 				color: rgb(0,0,0);
 			}
-			#lucky {
-				width: 140px;
-				height: 35px;
-				color:rgb(100,100,100);
-				background-color: rgb(240,240,240);
-				border: none;
-				border-radius: 3px;
-				font-size: 13px;
-			}
 			#languages {
 				font-size: 12px;
 			}
 			#lanlink {
 				color: rgb(0, 0, 150);
 				padding: 0px 2px 0px 2px;
+			}
+/* --------------------------------------------------- */
+			.footer {
+				background: rgb(240, 240, 240);
+				border-top: 1px solid rgb(230,230,230);
+				grid-area: footer;
+				color: rgb(150,150,150);
+			}
+			.country {
+				margin: 4px 0px 0px 15px;
+				font-size: 14px;
+				color: rgb(100,100,100);	
+			}
+/* --------------------------------------------------- */
+			.footer2 {
+				background: rgb(240, 240, 240);
+				border-top: 0.5px solid rgb(230,230,230);
+				grid-area: footer2;
+				color: rgb(255,255,255);
+				display: grid;
+				grid-template-areas: 
+				"left right";
+			}
+			.left {
+				padding-left: 15px;
+				grid-area: left;
+				justify-self: start;
+				align-items: center;
+				display: grid;
+				grid-column-gap: 12px;
+				grid-template-areas: 
+				"ad biz about how";
+			}
+			.right {
+				padding-right: 15px;
+				grid-area: right;
+				justify-self: end;
+				align-items: center;
+				display: grid;
+				grid-column-gap: 12px;
+				grid-template-areas: 
+				"priv terms settings";
+			}
+			#foot {
+				font-size: 14px;
+				color: rgb(100,100,100);
+			}
+/* --------------------------------------------------- */
+			a {
+				color: rgb(30, 30, 30);
+				text-decoration: none;
+			}
+			a:hover {
+				color: rgb(45,45,45);
+				text-decoration: underline;
 			}
 		</style>
 	</head>
@@ -145,7 +155,7 @@
 				<div class="gmail"><a href="">Gmail</a></div>
 				<div class="images"><a href="">Images</a></div>
 				<div class="apps">
-					<a href=""><img src="apps.png" alt="Google Apps" height="24px" width="24px"></a>
+					<a href=""><img src="appsorig.png" alt="Google Apps" height="24px" width="24px"></a>
 				</div>
 				<div class="profile">
 					<a href=""><img src="profile.png" alt="Profile" height="40px" width="40px"></a>
@@ -174,15 +184,15 @@
 			</div>
 			<div class="footer2">
 				<div class="left">
-					<div class="ad"><a href="">Advertising</a></div>
-					<div class="biz"><a href="">Business</a></div>
-					<div class="about"><a href="">About</a></div>
-					<div class="how"><a href="">How Search works</a></div>
+					<div class="ad"><a href="" id="foot">Advertising</a></div>
+					<div class="biz"><a href="" id="foot">Business</a></div>
+					<div class="about"><a href="" id="foot">About</a></div>
+					<div class="how"><a href="" id="foot">How Search works</a></div>
 				</div>
 				<div class="right">
-					<div class="priv"><a href="">Privacy</a></div>
-					<div class="terms"><a href="">Terms</a></div>
-					<div class="settings"><a href="">Settings</a></div>
+					<div class="priv"><a href="" id="foot">Privacy</a></div>
+					<div class="terms"><a href="" id="foot">Terms</a></div>
+					<div class="settings"><a href="" id="foot">Settings</a></div>
 				</div>
 			</div>
 		</div>
